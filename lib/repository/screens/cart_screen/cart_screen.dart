@@ -63,7 +63,7 @@ class _CartScreenState extends State<CartScreen> {
                             color: Color(0XFF000000),
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                          ),
+                          ), Icon(Icons.keyboard_arrow_down,size: 25,),
                         ],
                       ),
                       SizedBox(height: 25,),

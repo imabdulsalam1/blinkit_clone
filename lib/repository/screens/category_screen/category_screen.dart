@@ -13,35 +13,35 @@ class _CategoryScreenState extends State<CategoryScreen> {
   TextEditingController searchController = TextEditingController();
 
   final List<Map<String, String>> groceryKitchen = [
-    {"img": "Vegetables-Fruits", "text": "Vegetables & Fruits"},
-    {"img": "Atta-Dal-Rice", "text": "Atta, Dal & Rice"},
-    {"img": "Oil-Ghee-Masala", "text": "Oil, Ghee & Masala"},
-    {"img": "Dairy-Bread-Milk", "text": "Dairy, Bread & Milk"},
-    {"img": "Biscuits-Bakery", "text": "Biscuits & Bakery"},
+    {"img": "Vegetables-Fruits", "text": "Vegetables &\nFruits"},
+    {"img": "Atta-Dal-Rice", "text": "Atta, Dal & \nRice"},
+    {"img": "Oil-Ghee-Masala", "text": "Oil, Ghee & \nMasala"},
+    {"img": "Dairy-Bread-Milk", "text": "Dairy, Bread & \nMilk"},
+    {"img": "Biscuits-Bakery", "text": "Biscuits & \nBakery"},
   ];
 
   final List<Map<String, String>> secondGrocery = [
-    {"img": "Dry-Fruits-Cereals", "text": "Dry Fruits & Cereals"},
-    {"img": "Kitchen-Appliances", "text": "Kitchen & Appliances"},
-    {"img": "Tea-Coffees", "text": "Tea & Coffees"},
-    {"img": "Ice-Creams-much more", "text": "Ice Creams & Much More"},
-    {"img": "Noodles-Packet Food", "text": "Noodles & Packet Food"},
+    {"img": "Dry-Fruits-Cereals", "text": "Dry Fruits\n& Cereals"},
+    {"img": "Kitchen-Appliances", "text": "Kitchen & \nAppliances"},
+    {"img": "Tea-Coffees", "text": "Tea & \nCoffees"},
+    {"img": "Ice Creams-much more", "text": "Ice Creams & \nMuch More"},
+    {"img": "Noodles-Packet Food", "text": "Noodles & \nPacket Food"},
   ];
 
   final List<Map<String, String>> snacksAndDrinks = [
-    {"img": "Chips-Namkeens", "text": "Chips & Namkeens"},
-    {"img": "Sweets-Chocolates", "text": "Sweets & Chocolates"},
-    {"img": "Drinks-Juices", "text": "Drinks & Juices"},
-    {"img": "Sauces-Spreads", "text": "Sauces & Spreads"},
-    {"img": "Beauty-Cosmetics", "text": "Beauty & Cosmetics"},
+    {"img": "Chips-Namkeens", "text": "Chips & \nNamkeens"},
+    {"img": "Sweets-Chocolates", "text": "Sweets & \nChocolates"},
+    {"img": "Drinks-Juices", "text": "Drinks & \nJuices"},
+    {"img": "Sauces-Spreads", "text": "Sauces & \nSpreads"},
+    {"img": "Beauty-Cosmetics", "text": "Beauty & \nCosmetics"},
   ];
 
   final List<Map<String, String>> household = [
-    {"img": "surf"},
-    {"img": "skin-strands"},
-    {"img": "sofa"},
-    {"img": "black-spray"},
-    {"img": "kesh-king"},
+    {"img": "surf", "text": "N/A"},
+    {"img": "skin-strands", "text": "N/A"},
+    {"img": "sofa", "text": "N/A"},
+    {"img": "black-spray", "text": "N/A"},
+    {"img": "kesh-king", "text": "N/A"},
   ];
 
   @override
@@ -96,6 +96,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                           ),
+                          Icon(Icons.keyboard_arrow_down,size: 25,),
                         ],
                       ),
                       SizedBox(height: 25),
@@ -116,28 +117,21 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     ),
                   ),
                 ),
-              ],
-            ),
+
+            ]),
             Padding(
-              padding: const EdgeInsets.all(28.0),
-              child: reusableText(
-                "Grocery & Kitchen",
-                fontFamily: 'Poppins-Bold',
-                fontSize: 14,
-                fontWeight: FontWeight.w700,
-              ),
+              padding: const EdgeInsets.all(20.0),
+              child: reusableText("Grocery & Kitchen", fontFamily: 'Poppins-Bold', fontSize: 14, fontWeight: FontWeight.w700,),
             ),
             SizedBox(
               height: 110,
-              child: Padding(
+              child: ListView.builder(
                 padding: const EdgeInsets.only(left: 20),
-                child: ListView.builder(
-                  itemCount: groceryKitchen.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return _buildCategoryItem(groceryKitchen[index]);
-                  },
-                ),
+                itemCount: groceryKitchen.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return _buildCategoryItem(groceryKitchen[index]);
+                },
               ),
             ),
             SizedBox(
@@ -145,40 +139,45 @@ class _CategoryScreenState extends State<CategoryScreen> {
             ),
             SizedBox(
               height: 110,
-              child: Padding(
+              child: ListView.builder(
                 padding: const EdgeInsets.only(left: 20),
-                child: ListView.builder(
-                  itemCount: secondGrocery.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return _buildCategoryItem(secondGrocery[index]);
-                  },
-                ),
+                itemCount: secondGrocery.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return _buildCategoryItem(secondGrocery[index]);
+                },
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            // SizedBox(
+            //   height: 20,
+            // ),
             Padding(
-              padding: const EdgeInsets.all(28.0),
-              child: reusableText(
-                "Snacks & Drinks",
-                fontFamily: 'Poppins-Bold',
-                fontSize: 14,
-                fontWeight: FontWeight.w700,
-              ),
+              padding: const EdgeInsets.all(20.0),
+              child: reusableText("Snacks & Drinks", fontFamily: 'Poppins-Bold', fontSize: 14, fontWeight: FontWeight.w700,),
             ),
             SizedBox(
               height: 110,
-              child: Padding(
+              child: ListView.builder(
                 padding: const EdgeInsets.only(left: 20),
-                child: ListView.builder(
-                  itemCount: snacksAndDrinks.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return _buildCategoryItem(snacksAndDrinks[index]);
-                  },
-                ),
+                itemCount: snacksAndDrinks.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => _buildCategoryItem(snacksAndDrinks[index]),
+              ),
+            ),
+            // SizedBox(
+            //   height: 20,
+            // ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: reusableText("Household Essentials", fontFamily: 'Poppins-Bold', fontSize: 14, fontWeight: FontWeight.w700,),
+            ),
+            SizedBox(
+              height: 110,
+              child: ListView.builder(
+                padding: const EdgeInsets.only(left: 20),
+                itemCount: household.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => _buildCategoryItem(household[index]),
               ),
             ),
           ],
@@ -191,7 +190,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 8),
+          // margin: EdgeInsets.only(left: 8),
           height: 78,
           width: 71,
           decoration: BoxDecoration(
@@ -200,13 +199,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           ),
           child: ImgPath.customImage(img: category['img']!),
         ),
-        reusableText(
-          category['text']!,
-          fontWeight: FontWeight.w400,
-          fontSize: 10,
-          fontFamily: 'Poppins-Regular',
-          maxLines: 2,
-          textAlign: TextAlign.center,
+        reusableText(category['text']!, fontWeight: FontWeight.w400, fontSize: 10, fontFamily: 'Poppins-Regular', maxLines: 2, textAlign: TextAlign.center,
         ),
       ],
     );
