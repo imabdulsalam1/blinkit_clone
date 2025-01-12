@@ -32,8 +32,16 @@ class _BottomNavState extends State<BottomNav> {
         BottomNavigationBarItem(icon: ImgPath.customImage(img: 'home'),label: 'Home'),
         BottomNavigationBarItem(icon: ImgPath.customImage(img: 'shopping-bag'),label: 'Cart'),
         BottomNavigationBarItem(icon: ImgPath.customImage(img: 'category'),label: 'Category'),
-        BottomNavigationBarItem(icon: ImgPath.customImage(img: 'printer'),label: 'Print'),
-      ]),
+        BottomNavigationBarItem(icon: ImgPath.customImage(img: 'printer'),label: 'Print',),
+      ],
+        type: BottomNavigationBarType.fixed,
+        currentIndex: currentIndex,
+        onTap: (index){
+          setState(() {
+            currentIndex=index;
+          });
+        },
+      ),
     );
   }
 }
