@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Book Your Tickets',
+      title: 'Blinkit Clone',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: AppColors.appBgColor),
         scaffoldBackgroundColor: AppColors.appBgColor,
